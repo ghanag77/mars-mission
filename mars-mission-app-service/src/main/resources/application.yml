@@ -1,0 +1,29 @@
+server:
+  port: ${port:8088}
+  servlet:
+    context-path: /mars-mission
+spring:
+  main:
+    banner-mode: off
+    allow-circular-references: true
+  application:
+    name: MarsMission App Service
+  profiles:
+    active: local
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: admin
+      port: 27017
+      host: localhost
+external:
+  view-service:
+    url: http://localhost:8080/mars-mission-view
+    candidates: /candidate
+    filter-candidate: /filter
+    save-data-from-file: /save/file
+springdoc:
+  swagger-ui:
+    operations-sorter: method

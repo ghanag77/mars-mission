@@ -1,0 +1,24 @@
+server:
+  port: ${port:8080}
+  servlet:
+    context-path: /mars-mission-view
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1MB
+      max-request-size: 1MB
+  main:
+    banner-mode: off
+  application:
+    name: MarsMission View Service
+  profiles:
+    active: local
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: admin
+      port: 27017
+      host: localhost
